@@ -20,6 +20,7 @@ let posts=[];
 
 app.get("/",function(req,res){
   //res.sendFile(__dirname+"/views/home.ejs");
+  
   res.render("home", {homeBody : homeStartingContent ,posts : posts});
   //console.log(posts);
  // res.render("list",{kindOfDay: dateForm ,newItems: items});
@@ -72,8 +73,6 @@ app.post("/compose",function(req,res){
   res.redirect("/");
   
 });
-
-app.get("")
 
 
 

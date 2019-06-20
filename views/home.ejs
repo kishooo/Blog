@@ -2,7 +2,16 @@
 <h1>Home</h1>
 <p><%= homeBody %></p>
 <%  posts.forEach(function(post){ %>
-        <h1><%= post.title %></h1>
-        <p><%= post.content %></p>
+        <% if (post.content.length >100) { %>
+                <% var test = post.content.substr(0,100) +  ' ...'; %>
+                <h1><%= post.title %></h1>
+                <p><%= test %>
+                <a link rel="stylesheet" href="posts/<%= post.title %>">read more</a>
+                </p>
+                
+        <% }else{ %>
+                <h1><%= post.title %></h1>
+                <p><%= post.content %></p>
+        <% } %>
 <%  }) %>
 <%- include('partials/footer'); -%>
